@@ -24,6 +24,15 @@
               "src/assets"
             ],
             "styles": [
+            
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css",
+              "./node_modules/primeicons/primeicons.css",
+            
+              
+              "node_modules/quill/dist/quill.snow.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -88,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SchoolDataProject"
+    }
+  },
+  "defaultProject": "SchoolDataProject",
+  "cli": {
+    "analytics": "43070b52-94d7-4b2d-b66e-901a4d94588e"
+  }
 }

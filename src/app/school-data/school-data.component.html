@@ -1,0 +1,146 @@
+<mat-card class="example-card" *ngIf="data">
+  <mat-card-header>
+    <div>
+      <img
+        *ngFor="let item of data"
+        class="image"
+        src="{{ item.student_photo }}"
+        alt=""
+      />
+    </div>
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">
+        Student Name:{{ item.student_name }}
+      </h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">
+        AdmissionNumber:{{ item.student_admission_number }}
+      </h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">Exam Name:{{ item.exam_name }}</h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">Class Name:{{ item.class_name }}</h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">
+        Principal Remarks:{{ item.principals_remarks }}
+      </h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">
+        Teacher Remarks:{{ item.class_teachers_remarks }}
+      </h3></mat-card-subtitle
+    >
+    <mat-card-subtitle *ngFor="let item of data"
+      ><h3 class="name">Mean Grade:{{ item.mean_grade }}</h3></mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="content">
+      <div>
+        <h1 class="h1">Overall Position</h1>
+
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Deviation:{{ item.overall_position.deviation }}
+          </h3></mat-card-subtitle
+        >
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Position-Out-Of:{{ item.overall_position.position_out_of }}
+          </h3></mat-card-subtitle
+        >
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Position:{{ item.overall_position.position }}
+          </h3></mat-card-subtitle
+        >
+      </div>
+      <div>
+        <h1 class="h1">Stream Position</h1>
+
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Deviation:{{ item.stream_position.deviation }}
+          </h3></mat-card-subtitle
+        >
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Position-Out-Of:{{ item.stream_position.position_out_of }}
+          </h3></mat-card-subtitle
+        >
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Position:{{ item.stream_position.position }}
+          </h3></mat-card-subtitle
+        >
+      </div>
+      <div>
+        <h1 class="h1">Mean Marks</h1>
+
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Deviation:{{ item.mean_marks.deviation }}
+          </h3></mat-card-subtitle
+        >
+        <mat-card-subtitle *ngFor="let item of data"
+          ><h3 class="name">
+            Average Score:{{ item.mean_marks.avg_score }}
+          </h3></mat-card-subtitle
+        >
+      </div>
+    </div>
+
+    <p-table [value]="subjectResult">
+      <ng-template pTemplate="caption">
+        <div style="text-align: center">Subject Results</div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Rank_Out_Of</th>
+          <th>Subject Name</th>
+          <th>Deviation</th>
+          <th>Grade</th>
+          <th>Comment</th>
+          <th>Rank</th>
+          <th>Score</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-subject>
+        <tr>
+          <td>{{ subject.rank_out_of }}</td>
+          <td>{{ subject.subject_name }}</td>
+          <td>{{ subject.deviation }}</td>
+          <td>{{ subject.grade }}</td>
+          <td>{{ subject.comment }}</td>
+          <td>{{ subject.rank }}</td>
+          <td>{{ subject.score }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <br />
+
+    <p-table [value]="studentPerformance">
+      <ng-template pTemplate="caption">
+        <div style="text-align: center">Student Performance Over Time</div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Exam Name</th>
+          <th>Average Score</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-subject>
+        <tr>
+          <td>{{ subject.exam_name }}</td>
+          <td>{{ subject.avg_score }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </mat-card-content>
+</mat-card>
