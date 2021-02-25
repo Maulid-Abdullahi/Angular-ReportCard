@@ -1,11 +1,20 @@
+.container {
+    margin: 16px auto;
+   
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
 .example-card {
-    max-width: 5400px;
+    width: 1300px;
+    margin-right: 16px;
   }
   .image{
-      width: 200px;
-      height: 200px;
+     
       border-radius: 50%;
-      flex: left;
+      
   }
   .name{
       padding: 5px;

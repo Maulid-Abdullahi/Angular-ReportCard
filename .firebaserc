@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "student-report-card-5e853": {
+      "hosting": {
+        "SchoolDataProject": [
+          "student-report-card-5e853"
+        ]
+      }
+    }
+  }
+}

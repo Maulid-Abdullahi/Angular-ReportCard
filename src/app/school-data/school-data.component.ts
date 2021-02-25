@@ -7,6 +7,7 @@ import { SchoolDataService, Data} from '../school-data.service';
   styleUrls: ['./school-data.component.css']
 })
 export class SchoolDataComponent implements OnInit {
+  
 
  data: any = [];
 

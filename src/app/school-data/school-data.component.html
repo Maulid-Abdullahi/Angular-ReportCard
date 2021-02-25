@@ -1,9 +1,11 @@
+<div class="container">
 <mat-card class="example-card" *ngIf="data">
   <mat-card-header>
     <div>
       <img
         *ngFor="let item of data"
         class="image"
+        style="height: 200px; width: 200px;"
         src="{{ item.student_photo }}"
         alt=""
       />
@@ -95,14 +97,26 @@
       </div>
     </div>
 
-    <p-table [value]="subjectResult">
+    <p-table [value]="subjectResult" [scrollable]="true"  scrollHeight="300px">
+        <ng-template pTemplate="colgroup" let-columns>
+            <colgroup>
+                <col style="width:200px">
+                <col style="width:200px">
+                <col style="width:200px">
+                <col style="width:200px">
+                <col style="width:200px">
+                <col style="width:200px">
+                <col style="width:200px">
+            
+            </colgroup>
+        </ng-template>
       <ng-template pTemplate="caption">
         <div style="text-align: center">Subject Results</div>
       </ng-template>
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Rank_Out_Of</th>
-          <th>Subject Name</th>
+      <ng-template pTemplate="header"  >
+        <tr >
+          <th>Rank</th>
+          <th>Subject</th>
           <th>Deviation</th>
           <th>Grade</th>
           <th>Comment</th>
@@ -111,7 +125,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-subject>
-        <tr>
+        <tr >
           <td>{{ subject.rank_out_of }}</td>
           <td>{{ subject.subject_name }}</td>
           <td>{{ subject.deviation }}</td>
@@ -125,7 +139,7 @@
 
     <br />
 
-    <p-table [value]="studentPerformance">
+    <p-table [value]="studentPerformance" [scrollable]="true" [scrollHeight]="'calc(50vh - 104px)'">
       <ng-template pTemplate="caption">
         <div style="text-align: center">Student Performance Over Time</div>
       </ng-template>
@@ -144,3 +158,4 @@
     </p-table>
   </mat-card-content>
 </mat-card>
+</div>
