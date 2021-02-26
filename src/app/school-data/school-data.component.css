@@ -5,11 +5,14 @@
     flex: 1;
     justify-content: flex-start;
     align-items: flex-start;
+   
     
 }
 .example-card {
     width: auto;
     margin-right: 16px;
+    background-image: url('../../assets/images/image.jpg');
+   
   }
   .image{
      
